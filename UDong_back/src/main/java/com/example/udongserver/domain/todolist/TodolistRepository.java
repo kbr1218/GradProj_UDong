@@ -1,0 +1,13 @@
+// TodoRepository.java
+package com.example.udongserver.domain.todolist;
+
+import com.example.udongserver.domain.room.Room;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface TodolistRepository extends JpaRepository<Todolist, Long> {
+    List<Todolist> findByRoomId(Room room);
+}
